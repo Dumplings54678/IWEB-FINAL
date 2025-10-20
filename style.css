@@ -831,38 +831,6 @@ h3 {
     overflow: hidden;
 }
 
-/* Hover Effects for Feedback Boxes */
-.feedback-box:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-color: #f07820;
-}
-
-/* Add a subtle glow effect on hover */
-.feedback-box:hover::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(240, 120, 32, 0.1) 0%, transparent 50%);
-    z-index: 1;
-}
-
-/* Scale up the title on hover */
-.feedback-box:hover .feedback-title {
-    transform: scale(1.1);
-    color: #f07820;
-    text-shadow: 0 2px 4px rgba(240, 120, 32, 0.2);
-}
-
-/* Fade in content on hover */
-.feedback-box:hover .feedback-content {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 .feedback-title {
     font-size: 24px;
@@ -887,61 +855,6 @@ h3 {
     z-index: 2;
 }
 
-/* Enhanced hover for feedback content */
-.feedback-box:hover .feedback-content {
-    color: #444;
-    font-weight: 500;
-}
-
-/* Individual box color variations on hover */
-.feedback-row:nth-child(1) .feedback-box:nth-child(1):hover {
-    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-    border-color: #2196f3;
-}
-
-.feedback-row:nth-child(1) .feedback-box:nth-child(1):hover .feedback-title {
-    color: #1976d2;
-}
-
-.feedback-row:nth-child(1) .feedback-box:nth-child(2):hover {
-    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
-    border-color: #9c27b0;
-}
-
-.feedback-row:nth-child(1) .feedback-box:nth-child(2):hover .feedback-title {
-    color: #7b1fa2;
-}
-
-.feedback-row:nth-child(2) .feedback-box:nth-child(1):hover {
-    background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
-    border-color: #4caf50;
-}
-
-.feedback-row:nth-child(2) .feedback-box:nth-child(1):hover .feedback-title {
-    color: #388e3c;
-}
-
-.feedback-row:nth-child(2) .feedback-box:nth-child(2):hover {
-    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
-    border-color: #ff9800;
-}
-
-.feedback-row:nth-child(2) .feedback-box:nth-child(2):hover .feedback-title {
-    color: #f57c00;
-}
-
-/* Pulse animation on hover */
-@keyframes feedbackPulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(240, 120, 32, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(240, 120, 32, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(240, 120, 32, 0);
-    }
-}
 
 .feedback-box:hover {
     animation: feedbackPulse 1.5s infinite;
@@ -2139,6 +2052,92 @@ footer {
     padding: 20px;
 }
 
+/* About Us Image Styles */
+.about-image {
+    flex: 1;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Hero Banner Styles */
+.about-hero {
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Value Image Styles */
+.value-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border: 3px solid #f07820;
+}
+
+.value-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Fallback for when images don't load */
+.about-image:has(.about-img[style*="display: none"]) {
+    background-color: #ddd;
+    background-image: linear-gradient(45deg, #e0e0e0 25%, transparent 25%), 
+                      linear-gradient(-45deg, #e0e0e0 25%, transparent 25%), 
+                      linear-gradient(45deg, transparent 75%, #e0e0e0 75%), 
+                      linear-gradient(-45deg, transparent 75%, #e0e0e0 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* Responsive adjustments for images */
+@media (max-width: 900px) {
+    .about-image {
+        height: 250px;
+    }
+    
+    .hero-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-image {
+        height: 200px;
+    }
+    
+    .hero-image {
+        height: 250px;
+    }
+    
+    .value-image {
+        width: 60px;
+        height: 60px;
+    }
+}
+
 /* ===== ANIMATIONS ===== */
 @keyframes fadeIn {
     from {
@@ -2151,6 +2150,6 @@ footer {
     }
 }
 
-.product-card, .bestseller-card, .feedback-box, .value-card, .team-member, .jacket-product-item {
+.product-card, .bestseller-card, .value-card, .team-member, .jacket-product-item {
     animation: fadeIn 0.5s ease-in-out;
 }
