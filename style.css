@@ -2112,6 +2112,154 @@ footer {
     background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
 }
 
+/* ===== VIDEO SECTION STYLES ===== */
+.video-section {
+    margin: 50px auto;
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 15px;
+}
+
+.video-container {
+    background-color: #f8f8f8;
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.video-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.video-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    margin: 0 auto 25px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    background-color: #222;
+}
+
+.video-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: white;
+}
+
+.play-button {
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+}
+
+.placeholder-text {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.brand-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-caption {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.video-caption p {
+    font-size: 14px;
+    color: #777;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments for video section */
+@media (max-width: 768px) {
+    .video-section {
+        margin: 40px auto;
+    }
+    
+    .video-container {
+        padding: 30px 20px;
+    }
+    
+    .video-title {
+        font-size: 24px;
+    }
+    
+    .video-description {
+        font-size: 15px;
+    }
+    
+    .placeholder-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-section {
+        margin: 30px auto;
+    }
+    
+    .video-container {
+        padding: 25px 15px;
+    }
+    
+    .video-title {
+        font-size: 22px;
+    }
+    
+    .video-description {
+        font-size: 14px;
+    }
+    
+    .play-button svg {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .placeholder-text {
+        font-size: 14px;
+    }
+}
+
 /* Responsive adjustments for images */
 @media (max-width: 900px) {
     .about-image {
@@ -2153,3 +2301,4 @@ footer {
 .product-card, .bestseller-card, .value-card, .team-member, .jacket-product-item {
     animation: fadeIn 0.5s ease-in-out;
 }
+
